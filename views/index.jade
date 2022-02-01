@@ -1,0 +1,23 @@
+extends layout
+
+block content
+  h1.alert.alert-primary 四則演算
+  form(action="/result", method="post") 
+    div.form-group.col
+      div.form-check
+        input.form-check-input#sum(type="radio", name="ope", value="sum", checked)
+        label.form-check-label(for="sum") たし算
+      div.form-check
+        input.form-check-input#diff(type="radio", name="ope", value="diff")
+        label.form-check-label(for="diff") ひき算
+      div.form-check
+        input.form-check-input#pro(type="radio", name="ope", value="pro")
+        label.form-check-label(for="pro") かけ算
+      div.form-check
+        input.form-check-input#wari(type="radio", name="ope", value="wari")
+        label.form-check-label(for="wari") わり算
+    div.form-row.col-md-5
+      input.form-control.col-2.mx-2(type="number", name="num1", value=1, required)
+      input.form-control.col-2.mx-2(type="number", name="num2", value=1, required)
+    div.form-row.mt-3
+      input.btn.btn-primary(type="submit", value="けいさん")

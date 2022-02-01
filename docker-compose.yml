@@ -1,0 +1,17 @@
+version: '3.7'
+services:
+  app:
+    build:
+      context: .
+      # dockerfile: Dockerfile
+    image: node:12
+    environment:
+      - DEBUG=app:*
+    container_name:
+      node_app5
+    volumes:
+      - .:/app
+    working_dir: /app
+    ports:
+      - ${APP_PORT}:3000
+    command: npm run dev
